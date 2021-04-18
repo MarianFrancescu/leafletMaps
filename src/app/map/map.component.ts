@@ -12,7 +12,7 @@ import { FormControl } from '@angular/forms';
 export class MapComponent implements OnInit, AfterViewInit {
 
   firstCity: String;
-  secondCity: String; 
+  secondCity: String;
 
   //private map;
   map: L.Map;
@@ -28,10 +28,9 @@ export class MapComponent implements OnInit, AfterViewInit {
     center: L.latLng(46.54245, 24.55747)
   };
 
-  addRoute(){
-    if((this.firstCity == 'Timisoara' && this.secondCity == 'Iasi') 
-      || (this.secondCity == 'Timisoara' && this.firstCity == 'Iasi'))
-    {
+  addRoute() {
+    if ((this.firstCity == 'Timisoara' && this.secondCity == 'Iasi')
+      || (this.secondCity == 'Timisoara' && this.firstCity == 'Iasi')) {
       var pointA = new L.LatLng(47.155052103495144, 27.587398169412133);
       var pointB = new L.LatLng(45.767057950796485, 21.228706350202717);
       var pointList = [pointA, pointB];
@@ -46,34 +45,32 @@ export class MapComponent implements OnInit, AfterViewInit {
       Timisoara_Iasi.addTo(this.map).bringToFront().bringToFront().bindPopup("Tm-Is");
     }
 
-    if((this.firstCity == 'Timisoara' && this.secondCity == 'Kosice') 
-      || (this.secondCity == 'Timisoara' && this.firstCity == 'Kosice'))
-    {
+    if ((this.firstCity == 'Timisoara' && this.secondCity == 'Kosice')
+      || (this.secondCity == 'Timisoara' && this.firstCity == 'Kosice')) {
       pointA = new L.LatLng(48.72726589204106, 21.25586638299293);
       pointB = new L.LatLng(45.767057950796485, 21.228706350202717);
       pointList = [pointA, pointB];
 
       var Timisoara_Kosice = new L.Polyline(pointList, {
-      color: 'red',
-      weight: 4,
-      opacity: 0.7,
-      smoothFactor: 1
-    });
+        color: 'red',
+        weight: 4,
+        opacity: 0.7,
+        smoothFactor: 1
+      });
       Timisoara_Kosice.addTo(this.map).bringToFront().bringToFront().bindPopup("Timisoara-Kosice");
     }
 
-    if((this.firstCity == 'Kosice' && this.firstCity == 'Iasi') 
-      || (this.secondCity == 'Kosice' && this.secondCity == 'Iasi'))
-    {
+    if ((this.firstCity == 'Kosice' && this.firstCity == 'Iasi')
+      || (this.secondCity == 'Kosice' && this.secondCity == 'Iasi')) {
       pointA = new L.LatLng(48.72726589204106, 21.25586638299293);
       pointB = new L.LatLng(47.155052103495144, 27.587398169412133);
       pointList = [pointA, pointB];
       var Iasi_Kosice = new L.Polyline(pointList, {
-      color: 'blue',
-      weight: 4,
-      opacity: 0.7,
-      smoothFactor: 1
-    });
+        color: 'blue',
+        weight: 4,
+        opacity: 0.7,
+        smoothFactor: 1
+      });
 
       Iasi_Kosice.addTo(this.map).bringToFront().bringToFront().bindPopup("Timisoara-Iasi");
     }
@@ -119,40 +116,12 @@ export class MapComponent implements OnInit, AfterViewInit {
     //const cities = L.layerGroup([Iasi, Timisoara, Kosice]);
 
 
-    var pointA = new L.LatLng(47.155052103495144, 27.587398169412133);
-    var pointB = new L.LatLng(45.767057950796485, 21.228706350202717);
-    var pointList = [pointA, pointB];
+    var parisKievLL = [[48.8567, 2.3508], [50.45, 30.523333]];
+    var pointA = new L.LatLng(48.8567, 2.3508);
+    var pointB = new L.LatLng(50.45, 30.523333);
+    var varpointList = [pointA, pointB];
 
-    var Timisoara_Iasi = new L.Polyline(pointList, {
-      color: 'red',
-      weight: 4,
-      opacity: 0.7,
-      smoothFactor: 1
-    });
-    pointA = new L.LatLng(48.72726589204106, 21.25586638299293);
-    pointB = new L.LatLng(45.767057950796485, 21.228706350202717);
-    pointList = [pointA, pointB];
-
-    var Timisoara_Kosice = new L.Polyline(pointList, {
-      color: 'red',
-      weight: 4,
-      opacity: 0.7,
-      smoothFactor: 1
-    });
-
-    pointA = new L.LatLng(48.72726589204106, 21.25586638299293);
-    pointB = new L.LatLng(47.155052103495144, 27.587398169412133);
-    pointList = [pointA, pointB];
-    var Iasi_Kosice = new L.Polyline(pointList, {
-      color: 'blue',
-      weight: 4,
-      opacity: 0.7,
-      smoothFactor: 1
-    });
-
-    //Timisoara_Iasi.addTo(this.map).bringToFront().bringToFront().bindPopup("Timisoara-Iasi");
-    //Timisoara_Kosice.addTo(this.map).bringToFront().bindPopup("Timisoara-Kosice");
-    //Iasi_Kosice.addTo(this.map).bringToFront().bindPopup("Iasi-Kosice");
+    // https://github.com/ewoken/Leaflet.MovingMarker
 
     tiles.addTo(this.map);
     cities.addTo(this.map);
