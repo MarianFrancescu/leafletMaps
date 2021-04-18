@@ -5,6 +5,7 @@
     right: 0;
     bottom: 0;
     margin: 30px;
+    
   }
   
   .map-frame {
@@ -16,9 +17,16 @@
     height: 100%;
     width: 100%;
     position: relative;
+    
   }
   
+
   .formBlock{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
     max-width: 300px;
     background-color: rgba(240, 255, 255, 0.616);
     border: 1px solid;
@@ -52,5 +60,6 @@
   }
 
   .leaflet-top .leaflet-control{
-    margin-top: 100px;
+    margin-top: 200px;
   }
+

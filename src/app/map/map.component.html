@@ -3,10 +3,27 @@
     <div id="map">
       <div class="formBlock">
         <form id="form">
-          <input type="text" name="start" class="input" id="start" placeholder="Choose starting point">
-          <input type="text" name="finish" class="input" id="finish" placeholder="Choose finish point">
-          <button type="submit">Start jogging</button>
+          <!-- <input type="text" name="start" class="input" id="start" placeholder="Choose starting point">
+          <input type="text" name="finish" class="input" id="finish" placeholder="Choose finish point"> -->
+         <div>
+          <label for="cities">Choose from where you want to start the run</label><br>
+          <select [(ngModel)]="firstCity" id="cities1" name="cities">
+            <option value="Timisoara">Timisoara</option>
+            <option value="Kosice">Kosice</option>
+            <option value="Iasi">Iasi</option>
+          </select>
+        </div>
+        <div>
+          <label for="cities">Choose where you want to finish the run</label><br>   
+          <select [(ngModel)]="secondCity" id="cities" name="cities">
+            <option value="Timisoara">Timisoara</option>
+            <option value="Kosice">Kosice</option>
+            <option value="Iasi">Iasi</option>
+          </select>
+        </div>
+          
         </form>
+        <button type="submit" (click)="addRoute()">Start jogging</button>
       </div>
     </div>
   </div>
